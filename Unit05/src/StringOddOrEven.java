@@ -43,8 +43,17 @@ public class StringOddOrEven
 
  	public String toString()
  	{
- 		if ()
- 		String output= word + "is";
+ 		String output = "";
+ 		if (isEven() == true)
+ 		{
+ 			output = word + " is even.";
+ 		}
+ 		else
+ 		{
+ 			output = word + " is odd.";
+ 		}
  		return output;
+ 		
+ 			
 	}
 }
