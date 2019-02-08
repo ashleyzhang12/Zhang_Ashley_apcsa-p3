@@ -2,7 +2,7 @@
 //www.apluscompsci.com
 //Name -
 
-import static java.lang.System.*;
+//import static java.lang.System.*;
 
 public class LetterRemover
 {
@@ -13,7 +13,7 @@ public class LetterRemover
 	{
 
 		//call set
-	}
+	
 
 	//add in second constructor
 
@@ -38,9 +38,8 @@ public class LetterRemover
 	{
 
 		String cleaned=sentence;
-		return cleaned;
+		
 
-		String cleaned= "";
 		for(int x = 0; x <= sentence.length() - 1; x = x+1)
 		{
 			if(sentence.charAt(x) == lookFor)
