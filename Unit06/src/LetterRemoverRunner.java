@@ -2,7 +2,7 @@
 //www.apluscompsci.com
 //Name -
 
-import static java.lang.System.*;
+//import static java.lang.System.*;
 
 public class LetterRemoverRunner
 {
@@ -11,13 +11,13 @@ public class LetterRemoverRunner
 
 		//add test cases		
 
-		LetterRemover a = new LetterRemover("I am Sam I am  a", 'a');
-		System.out.println(a.toString());
-		System.out.println(a.removeLetters());
+		LetterRemover test = new LetterRemover("I am Sam I am  a", 'a');
+		System.out.println(test);
 		
-		LetterRemover b = new LetterRemover("qwertyqwerty", 'a');
-		System.out.println(b.toString());
-		System.out.println(b.removeLetters());
+		
+		test.setRemover("qwertyqwerty", 'a');
+		System.out.println(test);
+		
 
 											
 	}

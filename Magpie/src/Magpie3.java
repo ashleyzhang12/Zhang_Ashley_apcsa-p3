@@ -34,6 +34,31 @@ public class Magpie3
 		{
 			response = "Say something, please.";
 		}
+		else if (findKeyword(statement,"dog")>= 0 ||
+				findKeyword(statement,"cat") >= 0)
+		{
+			response = "Tell me more about your pets.";
+		}
+		else if (findKeyword(statement,"Mr. ") >= 0 || findKeyword(statement,"Mrs. ") >= 0
+				|| findKeyword(statement,"Ms. ")>= 0)
+		{
+			response = "Tell me more about your teachers.";
+		}
+		else if (findKeyword(statement,"soccer") >= 0 
+				|| findKeyword(statement,"swimming")>= 0)
+		{
+			response = "Tell me more about your favorite sports.";
+		}
+		else if (findKeyword(statement,"PC") >= 0
+				|| findKeyword(statement,"Mac")>= 0 )
+		{
+			response = "Tell me more about your computers";
+		}
+		else if (findKeyword(statement,"Toyota") >= 0 
+				|| findKeyword(statement,"Ford")>= 0 )
+		{
+			response = "Tell me more about your cars.";
+		}
 		else if (findKeyword(statement, "no") >= 0)
 		{
 			response = "Why so negative?";
@@ -134,39 +159,6 @@ public class Magpie3
 	 */
 	private int findKeyword(String statement, String goal)
 	{
-	String sample = "The quick brown fox jumped over the lazy dog.";
-			
-			//  Demonstrate the indexOf method.
-			int pos = sample.indexOf("slow");
-			if(pos != -1)
-			   System.out.println("slow is found at position " + pos);
-			else
-			   System.out.println("slow is not found");
-	
-	
-			int position = sample.indexOf("quick");
-			System.out.println ("sample.indexOf(\"quick\") = " + position);
-			
-			//  Demonstrate the toLowerCase method.
-			String lowerCase = sample.toLowerCase();
-			System.out.println ("sample.toLowerCase() = " + lowerCase);
-			System.out.println ("After toLowerCase(), sample = " + sample);
-			
-			//  Try other methods here:
-			String sentence = "Computer Science is the best, the greatest, and the most wonderful subject to study!";
-			int count = 0;
-			for (int x = 0; x < sentence.length() - 1; x = x + 3)
-			{
-				if(sentence.substring(x, x + 3).equals("the"))
-				{
-					count = count + 1;
-				}
-				else
-				{
-					count = count;
-				}
-			}
-
 			return findKeyword(statement, goal, 0);
 	}
 

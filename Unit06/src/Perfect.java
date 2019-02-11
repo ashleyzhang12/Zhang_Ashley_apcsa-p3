@@ -2,7 +2,7 @@
 //www.apluscompsci.com
 //Name -
 
-import static java.lang.System.*;
+//import static java.lang.System.*;
 
 public class Perfect
 {
@@ -31,12 +31,6 @@ public class Perfect
 
 	public boolean isPerfect()
 	{
-
-		return false;
-	}
-
-	//add a toString	
-
 		int sum = 0;
 		for (int x = 1; x < number; x = x+1)
 		{
@@ -59,6 +53,10 @@ public class Perfect
 		}
 		
 	}
+
+	//add a toString	
+
+		
 
 	
 	public String toString()

@@ -37,7 +37,7 @@ public class LetterRemover
 	public String removeLetters()
 	{
 
-		String cleaned=sentence;
+		String cleaned="";
 		
 
 		for(int x = 0; x <= sentence.length() - 1; x = x+1)
@@ -57,6 +57,7 @@ public class LetterRemover
 
 	public String toString()
 	{
-		return sentence + " - letter to remove " + lookFor;
+		return sentence + " - letter to remove " + lookFor + "\n" + removeLetters();
+		
 	}
 }

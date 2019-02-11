@@ -2,7 +2,7 @@
 //www.apluscompsci.com
 //Name
 
-import static java.lang.System.*;
+//import static java.lang.System.*;
 
 public class Word
 {
@@ -32,7 +32,6 @@ public class Word
 	public char getFirstChar()
 	{
 
-		return 0;
 
 		char first = word.charAt(0);
 		return first;
@@ -42,7 +41,6 @@ public class Word
 	public char getLastChar()
 	{
 
-		return 0;
 
 		char last = word.charAt(word.length() - 1);
 		return last;
@@ -54,7 +52,6 @@ public class Word
 
 		String back="";
 
-		String back = "";
 		for(int x = 0; x <= word.length()-1; x = x + 1)
 		{
 			
@@ -67,7 +64,7 @@ public class Word
  	public String toString()
  	{
 
- 		return "";
+
 
  		return word;
 

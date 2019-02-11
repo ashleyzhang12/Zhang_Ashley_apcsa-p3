@@ -35,7 +35,38 @@ public class Magpie4
 		{
 			response = "Say something, please.";
 		}
-
+		else if (findKeyword(statement,"dog")>= 0 ||
+				findKeyword(statement,"cat") >= 0)
+		{
+			response = "Tell me more about your pets.";
+		}
+		else if (findKeyword(statement,"Mr. ") >= 0 || findKeyword(statement,"Mrs. ") >= 0
+				|| findKeyword(statement,"Ms. ")>= 0)
+		{
+			response = "Tell me more about your teachers.";
+		}
+		else if (findKeyword(statement,"soccer") >= 0 
+				|| findKeyword(statement,"swimming")>= 0)
+		{
+			response = "Tell me more about your favorite sports.";
+		}
+		else if (findKeyword(statement,"PC") >= 0
+				|| findKeyword(statement,"Mac")>= 0 )
+		{
+			response = "Tell me more about your computers";
+		}
+		else if (findKeyword(statement,"Toyota") >= 0 
+				|| findKeyword(statement,"Ford")>= 0 )
+		{
+			response = "Tell me more about your cars.";
+		}
+		else if (findKeyword(statement, "mother") >= 0
+				|| findKeyword(statement, "father") >= 0
+				|| findKeyword(statement, "sister") >= 0
+				|| findKeyword(statement, "brother") >= 0)
+		{
+			response = "Tell me more about your family.";
+		}
 		else if (findKeyword(statement, "no") >= 0)
 		{
 			response = "Why so negative?";
@@ -48,10 +79,21 @@ public class Magpie4
 			response = "Tell me more about your family.";
 		}
 
+
+		
 		// Responses which require transformations
+
 		else if (findKeyword(statement, "I want to", 0) >= 0)
 		{
 			response = transformIWantToStatement(statement);
+		}
+		else if(findKeyword(statement, "I want something",0) >= 0)
+		{
+			response = transformIWantStatement(statement);
+		}
+		else if (findKeyword(statement, "I something you",0) >= 0)
+		{
+			response = transformIYouStatement(statement);
 		}
 
 		else
@@ -79,6 +121,16 @@ public class Magpie4
 	 * @param statement the user statement, assumed to contain "I want to"
 	 * @return the transformed statement
 	 */
+	private String transformIWantStatement(String statement)
+	{
+		return "Would you really be happy if you had something?";
+	}
+	
+	private String transformIYouStatement(String statement)
+	{
+		return "Why do you something me?";
+	}
+	
 	private String transformIWantToStatement(String statement)
 	{
 		//  Remove the final period, if there is one
