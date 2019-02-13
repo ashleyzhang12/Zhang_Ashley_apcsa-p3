@@ -19,13 +19,39 @@ public class RockPaperScissors
 	public RockPaperScissors(String player)
 	{
 		setPlayers(player);
+	
 	}
 
 	public void setPlayers(String player)
 	{
 		playChoice = player;
+		int num = (int)Math.random() *3;
+		if (num == 0)
+		{
+			compChoice = "R";
+		}
+		else if (num == 1)
+		{
+			compChoice = "P";
+		}
+		else
+		{
+			compChoice = "S";
+		}
+	}
+	
+	public String getComp()
+	{
+		return "computer had " + compChoice;
 		
 	}
+	
+	public String getPlayer()
+	{
+		return "player had " + playChoice;
+	}
+	
+
 
 	public String determineWinner()
 	{
@@ -63,7 +89,7 @@ public class RockPaperScissors
 
 	public String toString()
 	{
-		String output="";
+		String output = getPlayer() + "\n" + getComp() + "\n" + determineWinner();
 		return output;
 	}
 }
