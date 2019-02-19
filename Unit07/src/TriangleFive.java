@@ -11,23 +11,43 @@ public class TriangleFive
 
 	public TriangleFive()
 	{
+		letter = ' ';
+		amount = 0;
+		setLetter(' ');
 	}
 
 	public TriangleFive(char c, int amt)
 	{
+		setLetter(c);
+		setAmount(amt);
 	}
 
 	public void setLetter(char c)
 	{
+		letter = c;
 	}
 
 	public void setAmount(int amt)
 	{
+		amount = amt;
 	}
 
 	public String toString()
 	{
 		String output="";
+		String alphabet = "abcdefghijklmnopqrstuvwxyz";
+		for (int i = amount; i > 0; i --) //number of rows
+		{
+			for (int j = amount; j > 0; j -- ) //number of columns
+			{
+				for (int k = j; k > 0; k --)
+				{
+					output = output + letter + "\n";
+				}
+			}
+			letter = alphabet.charAt(alphabet.indexOf(letter) + 1);	
+		}
+		
 		return output;
 	}
 }
