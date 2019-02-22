@@ -38,16 +38,15 @@ public class TriangleFive
 		String alphabet = "abcdefghijklmnopqrstuvwxyz";
 		for (int i = amount; i > 0; i --) //number of rows
 		{
-			for (int j = amount; j > 0; j -- ) //number of columns
+			for (int j = amount; j > 0; j--)
 			{
-				for (int k = j; k > 0; k --)
-				{
-					output = output + letter + "\n";
-				}
+				output = output + letter;
 			}
-			letter = alphabet.charAt(alphabet.indexOf(letter) + 1);	
+			letter = alphabet.charAt(alphabet.indexOf(letter) + 1);
 		}
-		
+	
 		return output;
+		
+		
 	}
 }
