@@ -12,9 +12,16 @@ public class DoubleRunner
 		System.out.println(run);
 		System.out.println("biggest = " + run.getBiggest() + "\n");
 
-		run.setDoubles(14.51,6.17,71.8,1.0);
+		run.setDoubles(41.15, 816.7, 17.8, 19.0);
 		System.out.println(run);
 		System.out.println("biggest = " + run.getBiggest() + "\n");
-				
+		
+		run.setDoubles(41.15, 816.7, 17.8, 19.0);
+		System.out.println(run);
+		System.out.println("biggest = " + run.getBiggest() + "\n");
+
+		run.setDoubles(4.5, -456.7, 677.8, 9.0);
+		System.out.println(run);
+		System.out.println("biggest = " + run.getBiggest() + "\n");		
 	}
 }

@@ -28,9 +28,14 @@ public class BiggestDouble
 
 	public double getBiggest()
 	{
-		double biggest = 0;
-		biggest = Math.max(four,Math.max(three,Math.max(one, two)));
-		return biggest;
+		if (Math.max(two, three) < one && Math.max(three, four)< one && Math.max(two, four)<one)
+			return one;
+		else if(Math.max(one, three) < two && Math.max(three, four) < two && Math.max(one, four) < two)
+			return two;
+		else if (Math.max(one, two) < three && Math.max(two, four) < three && Math.max(one, four) < three)
+			return three;
+		else
+			return four;
 	}
 
 	public String toString()
