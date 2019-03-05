@@ -35,15 +35,45 @@ public class TriangleFive
 	public String toString()
 	{
 		String output="";
+		char newLetter = letter;
 		String alphabet = "abcdefghijklmnopqrstuvwxyz";
-		for (int i = amount; i > 0; i --) //number of rows
+		int place = 0;
+		
+		for (int i = amount; i > 0 ; i --) //number of rows printed out
 		{
-			for (int j = amount; j > 0; j--)
+			for (int j = amount; j > amount - i; j--)// number of letters to print out
 			{
-				output = output + letter;
-			}
-			letter = alphabet.charAt(alphabet.indexOf(letter) + 1);
+				for (int k = amount; k > amount - j; k-- )// number of each letter to print out
+				
+				{
+					if (amount - j == 0)
+					newLetter = letter;//prints out original letter if printing out amount number of times
+					else
+					newLetter = newLetter;
+					
+					output = output + newLetter;
+					
+				}
+				
+				//determines new letter
+				place = alphabet.indexOf(newLetter);
+				if (place < 25)
+				{
+					place++;
+					newLetter = alphabet.charAt(place);
+				}
+				else //looping back around after z
+				newLetter = alphabet.charAt(place - 25);
+				
+				output = output + " ";
+				
+			}		
+			
+			output = output + "\n";
 		}
+		
+		
+			
 	
 		return output;
 		
