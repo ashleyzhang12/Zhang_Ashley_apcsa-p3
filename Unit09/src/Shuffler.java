@@ -63,13 +63,13 @@ public class Shuffler {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
 		int[] shuffled = new int[52];
 		int k = 0;
-		for(int j=0; j <= (values.length + 1)/2; j++)
+		for(int j=0; j < (values.length + 1)/2; j++)
 		{
 			shuffled[k] = values[j];
 			k = k + 2;
 		}
 		k = 1;
-		for(int j = (values.length + 1)/2; j <= 51; j++)
+		for(int j = (values.length + 1)/2; j < values.length; j++)
 		{
 			shuffled[k] = values[j];
 			k = k+2;
@@ -90,6 +90,15 @@ public class Shuffler {
 	 */
 	public static void selectionShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
-		for (int k = 51; k > 0; k++)
+		int[] shuffled = new int[values.length];
+		int r = 0;
+		int holder= 0;
+		for (int k = values.length-1; k > 0; k--)
+		{
+			r = (int)Math.random()*values.length;
+			holder = values[k];
+			values[k] = values[r];
+			values[r] = holder;	
+		}
 	}
 }
