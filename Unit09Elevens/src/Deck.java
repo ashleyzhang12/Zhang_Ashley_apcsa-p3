@@ -38,7 +38,7 @@ public class Deck {
 			
 			for (int j = 0; j < suits.length; j++ )
 			{
-				cards.add(new Card(ranks[i], suits[j], values[j]));
+				cards.add(new Card(ranks[i], suits[j], values[i]));
 				
 			}
 		}

@@ -25,5 +25,9 @@ public class DeckTester {
 		System.out.println(test2.deal());
 		System.out.println(test2);
 		
+		Deck test3 = new Deck(new String[] {"A", "B", "C"},
+				new String[] {"Giraffes", "Lions"},
+				new int[] {2,1,6});
+		System.out.println(test3);
 	}
 }
