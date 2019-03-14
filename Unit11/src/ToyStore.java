@@ -50,7 +50,6 @@ public class ToyStore
 			}
 		}
 		
-		
 	}
   
   	public Toy getThatToy(String nm )
@@ -100,7 +99,6 @@ public class ToyStore
 	  			}
   		}
  
-  		System.out.println(toyList);
   		
   		
   	}  
