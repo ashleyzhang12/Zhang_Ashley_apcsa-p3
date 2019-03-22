@@ -29,5 +29,9 @@ public class DeckTester {
 				new String[] {"Giraffes", "Lions"},
 				new int[] {2,1,6});
 		System.out.println(test3);
+		
+		test3.shuffle();
+		System.out.println(test3);
+		
 	}
 }

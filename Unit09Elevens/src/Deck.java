@@ -52,7 +52,7 @@ public class Deck {
 	 */
 	public boolean isEmpty() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		if (cards.size() == 0)
+		if (size == 0)
 			return true;
 		else
 			return false; 
@@ -64,7 +64,6 @@ public class Deck {
 	 */
 	public int size() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		size = cards.size();
 		return size;
 	}
 
@@ -79,7 +78,7 @@ public class Deck {
 		Card holder;
 		for (int k = cards.size()-1; k > 0; k--)
 		{
-			r = (int)Math.random()*cards.size();
+			r = (int)(Math.random()*cards.size());
 			holder = cards.get(k);
 			cards.set(k,cards.get(r));
 			cards.set(r, holder);
@@ -94,13 +93,12 @@ public class Deck {
 	 */
 	public Card deal() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		Card dealtCard;
-		if (cards.size() ==0)
+		if (size ==0)
 		return null;
 		else
 		{
 			
-			Card d = cards.get(cards.size() - 1);
+			Card d = cards.get(size-1);
 			size = size - 1;
 			return d;
 		}
@@ -124,18 +122,8 @@ public class Deck {
 				rtn = rtn + "\n";
 			}
 		}
-
+		
 		rtn = rtn + "\nDealt cards: \n";
-		for (int k = cards.size() - 1; k >= 0; k--) {
-			rtn = rtn + cards.get(k);
-			if (k != 0) {
-				rtn = rtn + ", ";
-			}
-			if ((k - cards.size()) % 2 == 0) {
-				// Insert carriage returns so entire deck is visible on console.
-				rtn = rtn + "\n";
-			}
-		}
 		for (int k = cards.size() - 1; k >= size; k--) {
 			rtn = rtn + cards.get(k);
 			if (k != size) {
@@ -146,7 +134,6 @@ public class Deck {
 				rtn = rtn + "\n";
 			}
 		}
-		
 
 		rtn = rtn + "\n";
 		return rtn;
