@@ -71,7 +71,7 @@ public class WordSearch
 		return false;
 		
 		int pos = 0;
-		for(int k = c; k < c - w.length(); k--)
+		for(int k = c; k > c - w.length(); k--)
 		{
 			if(m[r][k].equals(w.substring(pos,pos+1)))
 			pos++;
@@ -86,15 +86,18 @@ public class WordSearch
 
 	public boolean checkUp(String w, int r, int c)
 	{
+		int pos = 0;
 		if(r < w.length())
 			return false;
-		int pos = 0;
-		for(int k = r; k < r - w.length(); k --)
+		
+		
+		for(int k = r; k > r - w.length(); k --)
 		{
 			if(m[k][c].equals(w.substring(pos,pos+1)))
 			pos++;
 			else return false;
 		}
+		
 		if (pos == w.length()) return true;
 		return false;
 	}
@@ -122,7 +125,7 @@ public class WordSearch
 				
 		int pos = 0;
 		int col=c;
-		for(int k = r; k < r - w.length(); k --)
+		for(int k = r; k > r - w.length(); k --)
 		{
 			if(m[k][col].equals(w.substring(pos,pos+1)))
 			{
@@ -142,7 +145,7 @@ public class WordSearch
 			return false;
 		int pos = 0;
 		int col = c;
-		for(int k = r; k < r - w.length(); k --)
+		for(int k = r; k > r - w.length(); k --)
 		{
 			if(m[k][col].equals(w.substring(pos,pos+1)))
 			{
