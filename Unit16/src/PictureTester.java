@@ -29,7 +29,7 @@ public class PictureTester
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
-    Picture temple = new Picture("temple.jpg");
+    Picture temple = new Picture("src/images/temple.jpg");
     temple.explore();
     temple.mirrorTemple();
     temple.explore();
@@ -49,6 +49,13 @@ public class PictureTester
     Picture swan = new Picture("src/images/swan.jpg");
     swan.edgeDetection(10);
     swan.explore();
+  }
+  
+  public static void testEdgeDetection2()
+  {
+	  Picture swan = new Picture("src/images/swan.jpg");
+	    swan.edgeDetection2(10);
+	    swan.explore();
   }
   public static void testKeepOnlyBlue()
   {
@@ -91,6 +98,61 @@ public class PictureTester
 	  motorcycle.mirrorHorizontal();
 	  motorcycle.explore();
   }
+  public static void testMirrorHorizontalBotToTop()
+  {
+	  Picture motorcycle = new Picture("src/images/redMotorcycle.jpg");
+	  motorcycle.mirrorHorizontalBotToTop();
+	  motorcycle.explore();
+  }
+  public static void testMirrorDiagonal()
+  {
+	  Picture beach = new Picture("src/images/beach.jpg");
+	  beach.mirrorDiagonal();
+	  beach.explore();
+  }
+  
+  public static void testMirrorArms()
+  {
+	  Picture snowman = new Picture("src/images/snowman.jpg");
+	  snowman.mirrorArms();
+	  snowman.explore();
+  }
+  
+  public static void testMirrorGull()
+  {
+	  Picture seagull = new Picture ("src/images/seagull.jpg");
+	  seagull.mirrorGull();
+	  seagull.explore();
+  }
+  
+  public static void testCopy()
+  {
+	  Picture flower = new Picture("src/images/flower1.jpg");
+	  Picture empty = new Picture("src/images/640x480.jpg");
+	  empty.copy(flower,18,84);
+	  empty.explore();
+	 
+  }
+  
+  public static void testCopy2()
+  {
+	  Picture flower = new Picture("src/images/flower1.jpg");
+	  Picture empty = new Picture("src/images/640x480.jpg");
+	  empty.copy(flower, 18,2 ,84, 65);
+	  empty.explore();
+	  
+  }
+  
+  public static void testMyCollage()
+  {
+	  
+	  Picture empty = new Picture("src/images/640x480.jpg");
+	  empty.myCollage();
+	  empty.explore();
+	  
+  }
+  
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -106,22 +168,31 @@ public class PictureTester
     //testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
-    //testMirrorTemple();
+	// testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
 	//testMirrorVerticalRightToLeft();
-	  testMirrorHorizontal();
+	//  testMirrorHorizontalBotToTop();
+	//testMirrorDiagonal();
+	// testMirrorHorizontal();
     //testCollage();
     //testCopy();
-    //testEdgeDetection();
-    //testEdgeDetection2();
+	//testEdgeDetection();
+    testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
+	  //testMirrorArms();
+	  //testMirrorGull();
+	  //testCopy2();
+	 // testMyCollage();
+	 
+	  //Picture flower = new Picture("src/images/flower1.jpg");
+	  //flower.explore();
 	  
 	
   }
