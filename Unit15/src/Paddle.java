@@ -43,16 +43,34 @@ public class Paddle extends Block
    public void moveUpAndDraw(Graphics window)
    {
 	   draw(window, Color.WHITE);
-	   if(getY() > 0) setY(getY() - speed);
+	    //if(getY() > 0)
+	    	setY(getY() - speed);
 	   draw(window);
    }
 
    public void moveDownAndDraw(Graphics window)
    {
 	   draw(window, Color.WHITE);
-	   if(getY() < 600 - getHeight()) setY(getY() + speed);
+	  //if(getY() < 600 - getHeight())
+		  setY(getY() + speed);
 	   draw(window);
 
+   }
+   
+   public void moveLeftandDraw(Graphics window)
+   {
+	   draw(window, Color.WHITE);
+	    //if (getX() > 0) setX(getX() - speed);
+	   setX(getX() - getSpeed());
+	   draw(window);
+   }
+   
+   public void moveRightandDraw(Graphics window)
+   {
+	   draw(window, Color.WHITE);
+	   //if(getX() < 800 - getWidth())setX(getX() + speed);
+	   setX(getX() + getSpeed());
+	   draw(window);
    }
 
    //add get methods

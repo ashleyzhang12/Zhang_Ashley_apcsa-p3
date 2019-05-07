@@ -28,12 +28,12 @@ public class Pong extends Canvas implements KeyListener, Runnable
 	{
 		//set up all variables related to the game
 		ball = new BlinkyBall();
-		leftPaddle = new Paddle(20, 10, 10, 40, Color.RED, 5);
-		rightPaddle = new Paddle(770, 10, 10, 40, Color.RED, 5);
+		leftPaddle = new Paddle(20, 10, 40, 40, Color.RED, 5);
+		rightPaddle = new Paddle(740, 10, 40, 40, Color.RED, 5);
 		keys = new boolean[4];
 		scoreRight = 0;
 		scoreLeft = 0;
-		rightWall = new Block(790, 0, 10, 600, Color.WHITE);
+		rightWall = new Block(800, 0, 10, 600, Color.WHITE);
 		leftWall = new Block(0, 0, 10, 600, Color.WHITE);
 		topWall = new Block(0, 0, 800, 10, Color.WHITE);
 		bottomWall = new Block(0, 490, 800, 10, Color.WHITE);
@@ -108,7 +108,7 @@ public class Pong extends Canvas implements KeyListener, Runnable
 			ball.setYSpeed(1);	
 		}
 		
-		//make a rectangle and paint it white every time so we don't have weird leftover scores
+		
 		graphToBack.setColor(Color.WHITE);
 		graphToBack.fillRect(440,  520,  80,  80);
 		graphToBack.fillRect(640,  520, 100, 100);
@@ -146,14 +146,14 @@ public class Pong extends Canvas implements KeyListener, Runnable
 			}			
 		}
 			
-		//see if the ball hits the right paddle; still probably buggy
+		//see if the ball hits the right paddle
 		if(ball.getX() >= rightPaddle.getX() - rightPaddle.getWidth() + Math.abs(ball.getXSpeed())
 				&& (ball.getY() >= rightPaddle.getY() 
 					&& ball.getY() <= rightPaddle.getY() + rightPaddle.getHeight()
 						|| ball.getY() + ball.getHeight() >= rightPaddle.getY()
 						&& ball.getY() + ball.getHeight() < rightPaddle.getY() + rightPaddle.getHeight()))
 		{
-			//what does this if statement even do?? it's probably incorrect
+			
 			if(ball.getX() >= rightPaddle.getX() - Math.abs(ball.getXSpeed()))
 			{
 				ball.setYSpeed(-ball.getYSpeed());
@@ -161,9 +161,7 @@ public class Pong extends Canvas implements KeyListener, Runnable
 			}
 			else
 			{
-				System.out.println(ball.getXSpeed());
 				ball.setXSpeed(-ball.getXSpeed());
-				System.out.println(ball.getXSpeed());
 				if(ball.getYSpeed() != 0) ball.setColor(((BlinkyBall)ball).randomColor());
 
 			}
@@ -174,6 +172,7 @@ public class Pong extends Canvas implements KeyListener, Runnable
 		if(keys[1]) leftPaddle.moveDownAndDraw(graphToBack);
 		if(keys[2]) rightPaddle.moveUpAndDraw(graphToBack);
 		if(keys[3]) rightPaddle.moveDownAndDraw(graphToBack);
+		
 		
 		//draw scoring--IT'S NOT WORKING
 		graphToBack.setColor(Color.RED);
@@ -190,6 +189,7 @@ public class Pong extends Canvas implements KeyListener, Runnable
 			case 'Z' : keys[1]=true; break;
 			case 'I' : keys[2]=true; break;
 			case 'M' : keys[3]=true; break;
+		
 		}
 	}
 
