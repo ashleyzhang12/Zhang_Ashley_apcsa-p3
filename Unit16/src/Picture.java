@@ -520,6 +520,96 @@ public class Picture extends SimplePicture
     
   }
   
+  
+  
+  public void encode(Picture messagePict)
+  {
+	  
+	  Pixel[][] messagePixels = messagePict.getPixels2D();
+	  Pixel[][] pixels = this.getPixels2D();
+	  Pixel leftPixel = null;
+	  Pixel rightPixel = null;
+	  Pixel messagePixel = null;
+	  Pixel currentPixel = null;
+	  int pos = 0;
+	 
+	  
+	 
+	  for(int row = 0; row < pixels.length;row++)
+	  {
+		  for(int col = 1; col < pixels[0].length; col++)
+		  {
+			  leftPixel = pixels[row][col -1];
+			  rightPixel = pixels[row][col];
+			  if (leftPixel.getGreen() == rightPixel.getGreen()
+					  && leftPixel.getBlue() == rightPixel.getBlue()
+					  && leftPixel.getRed() == rightPixel.getRed())
+			  {
+				  rightPixel.setBlue(rightPixel.getBlue() + 1);
+				  rightPixel.setGreen(rightPixel.getGreen() + 1);
+				  rightPixel.setRed(rightPixel.getRed() + 1);  
+			  }
+		  }
+	  }
+	  
+	 for(int row = 0; row < messagePixels.length; row++)
+	  {
+		  for(int col = 1; col < messagePixels[0].length*2 && col<pixels[0].length; col = col + 2)
+		  {
+			  messagePixel = messagePixels[row][col/2];
+			  currentPixel = pixels[row][col];
+			  leftPixel = pixels[row][col - 1];
+			  if(messagePixel.colorDistance(Color.BLACK) < 50)
+			  {
+				  
+					  currentPixel.setGreen(leftPixel.getGreen());
+					  currentPixel.setBlue(leftPixel.getBlue());
+					  currentPixel.setRed(leftPixel.getRed());
+				  
+			  }
+			  
+		  }
+	  }
+	  
+	  
+	  
+	 
+	  
+  }
+  
+  public Picture decode()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  int height = this.getHeight();
+	  int width = this.getWidth();
+	  Pixel leftPixel = null;
+	  Pixel rightPixel = null;
+	  Picture messagePicture = new Picture(height,width/2);
+	  Pixel[][] messagePixels = messagePicture.getPixels2D();
+	  Pixel currPixel = null;
+	 
+	  for(int row = 0; row < pixels.length;row++)
+	  {
+		  for(int col = 1; col < pixels[0].length; col+=2)
+		  {
+			  rightPixel = pixels[row][col];
+			  leftPixel = pixels[row][col -1];
+			  currPixel = messagePixels[row][col/2];
+			  if (rightPixel.getBlue() == leftPixel.getBlue()
+					  && rightPixel.getGreen() == leftPixel.getGreen()
+					  && rightPixel.getRed() == leftPixel.getRed())
+			  {
+				  currPixel.setBlue(0);
+				  currPixel.setGreen(0);
+				  currPixel.setRed(0);
+				  
+			  }
+		  }
+	  }
+	  return messagePicture;
+	  
+  }
+  
   /* Main method for testing - each class in Java can have a main 
    * method 
    */

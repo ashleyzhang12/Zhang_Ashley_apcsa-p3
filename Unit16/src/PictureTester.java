@@ -9,6 +9,7 @@
 public class PictureTester
 {
   /** Method to test zeroBlue */
+	
   public static void testZeroBlue()
   {
     Picture beach = new Picture("src/images/beach.jpg");
@@ -152,6 +153,38 @@ public class PictureTester
 	  
   }
   
+  public static void testAppleEncodeAndDecode()
+  {
+	  Picture apple = new Picture("src/images/apple.jpg");
+	  apple = apple.scale(0.5, 0.5);
+	  Picture beach = new Picture("src/images/beach.jpg");
+	  beach.encode(apple);
+	  beach.explore();
+	  beach.decode().explore();
+  }
+  
+  /*public static void testEncode()
+  {
+	  Picture apple = new Picture("src/images/apple.jpg");
+	  apple = apple.scale(0.5, 0.5);
+	  Picture beach = new Picture("src/images/beach.jpg");
+	  beach.encode(apple);
+	  beach.explore();
+  }
+  */
+  
+  public static void testMessageEncodeAndDecode()
+  {
+	  Picture message = new Picture("src/images/msg.jpg");
+	  Picture beach = new Picture("src/images/beach.jpg");
+	  
+	  beach.encode(message);
+	  beach.explore();
+	  beach.decode().explore();
+  }
+  
+  
+  
   
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -179,7 +212,7 @@ public class PictureTester
     //testCollage();
     //testCopy();
 	//testEdgeDetection();
-    testEdgeDetection2();
+    //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);
@@ -190,9 +223,19 @@ public class PictureTester
 	  //testMirrorGull();
 	  //testCopy2();
 	 // testMyCollage();
+	  //testEncode();
+	  testAppleEncodeAndDecode();
+	  //testMessageEncodeAndDecode();
+	  
 	 
-	  //Picture flower = new Picture("src/images/flower1.jpg");
-	  //flower.explore();
+	  /*Picture apple = new Picture("src/images/apple.jpg");
+	  apple = apple.scale(0.5, 0.5);
+	  apple.explore();*/
+	  
+	  
+	  Picture beach = new Picture("src/images/beach.jpg");
+	  beach.explore();
+	  
 	  
 	
   }
